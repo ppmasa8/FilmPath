@@ -41,9 +41,9 @@ export default {
     ],
     status: '',
     statusItems: [
-      'Want to Watch',
-      'Watching now',
-      'Watched',
+      'ToDo',
+      'Doing',
+      'Done',
     ],
     rate: '',
     rateItems: [
