@@ -1,4 +1,4 @@
-class MoviesController < ApplicationController
+class Api::V1::MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :update, :destroy]
 
   # GET /movies
@@ -39,13 +39,13 @@ class MoviesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_movie
-      @movie = Movie.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_movie
+    @movie = Movie.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def movie_params
-      params.require(:movie).permit(:title, :status, :rate)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def movie_params
+    params.require(:movie).permit(:title, :status, :rate)
+  end
 end
