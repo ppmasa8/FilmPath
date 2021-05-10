@@ -23,8 +23,13 @@
                       <v-list-item-content class="align-end">
                         <v-chip
                           :color="getColor(movie.status)"
+                          class="chip-overflow"
+                          medium
                           dark
                         >
+                          <v-icon left>
+                            mdi-label
+                          </v-icon>
                           {{ movie.status }}
                         </v-chip>
                       </v-list-item-content>
@@ -105,5 +110,13 @@ export default {
       else return 'green'
     },
   }
+
 }
+
 </script>
+
+<style>
+.chip-overflow {
+  max-width: 80px;
+}
+</style>
