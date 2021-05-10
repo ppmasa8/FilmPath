@@ -6,13 +6,41 @@
           <Search></Search>
         </div>
 
-        <v-data-table
-          :headers="headers"
-          :items="movies"
-          :items-per-page="5"
-          class="elevation-1"
-        >
-        </v-data-table>
+        <v-data-iterator :items="movies">
+          <template>
+            <v-row>
+              <v-col v-for="movie in movies">
+                <v-card>
+                  <v-card-title class="subheading font-weight-bold">
+                    {{ movie.title }}
+                  </v-card-title>
+
+                  <v-divider></v-divider>
+
+                  <v-list dense>
+                    <v-list-item>
+                      <v-list-item-content>Status:</v-list-item-content>
+                      <v-list-item-content class="align-end">
+                        {{ movie.status }}
+                      </v-list-item-content>
+                    </v-list-item>
+
+                    <v-list-item>
+                      <v-list-item-content>Rate:</v-list-item-content>
+                      <v-list-item-content class="align-end">
+                        {{ movie.rate }}
+                      </v-list-item-content>
+                    </v-list-item>
+                  </v-list>
+
+                </v-card>
+
+              </v-col>
+            </v-row>
+
+          </template>
+
+        </v-data-iterator>
 
       </v-container>
     </v-main>
@@ -48,5 +76,13 @@ export default {
       .get(url)
       .then(response => (this.movies = response.data))
   },
+
+  methods: {
+    getColor (rate) {
+      if (rate < 3) return 'red'
+      else if (rate  < 4) return 'orange'
+      else return 'green'
+    },
+  }
 }
 </script>
