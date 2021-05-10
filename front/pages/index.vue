@@ -7,7 +7,7 @@
         </div>
 
         <v-data-iterator :items="movies">
-          <template>
+          <template class="text-center">
             <v-row>
               <v-col v-for="movie in movies">
                 <v-card>
@@ -21,14 +21,35 @@
                     <v-list-item>
                       <v-list-item-content>Status:</v-list-item-content>
                       <v-list-item-content class="align-end">
-                        {{ movie.status }}
+                        <v-chip
+                          :color="getColor(movie.status)"
+                          dark
+                        >
+                          {{ movie.status }}
+                        </v-chip>
                       </v-list-item-content>
                     </v-list-item>
 
                     <v-list-item>
                       <v-list-item-content>Rate:</v-list-item-content>
                       <v-list-item-content class="align-end">
-                        {{ movie.rate }}
+                        <div class="text-center">
+                          <v-rating
+                            v-model="movie.rate"
+                            color="yellow darken-3"
+                            background-color="grey darken-1"
+                            hover
+                            small
+                          >
+                          </v-rating>
+                        </div>
+                      </v-list-item-content>
+                    </v-list-item>
+
+                    <v-list-item>
+                      <v-list-item-content>Year:</v-list-item-content>
+                      <v-list-item-content class="align-end">
+                        {{ movie.created_at.match(/^[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/).join('') }}
                       </v-list-item-content>
                     </v-list-item>
                   </v-list>
@@ -78,9 +99,9 @@ export default {
   },
 
   methods: {
-    getColor (rate) {
-      if (rate < 3) return 'red'
-      else if (rate  < 4) return 'orange'
+    getColor (state) {
+      if (state === "todo") return 'red'
+      else if (state === "doing") return 'orange'
       else return 'green'
     },
   }
