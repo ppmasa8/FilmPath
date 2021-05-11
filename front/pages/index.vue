@@ -3,17 +3,27 @@
     <v-main>
       <v-container>
         <div>
-          <Search></Search>
+          <Create></Create>
         </div>
 
-        <v-data-iterator :items="movies">
+        <v-data-iterator
+          :items="movies"
+          :itemsPerPage="15"
+        >
           <template class="text-center">
             <v-row>
-              <v-col v-for="movie in movies">
+              <v-col
+                v-for="movie in movies"
+                cols="12"
+                sm="6"
+                md="4"
+                lg="4"
+              >
                 <v-card>
                   <v-card-title class="subheading font-weight-bold">
                     {{ movie.title }}
                   </v-card-title>
+
 
                   <v-divider></v-divider>
 
@@ -58,14 +68,10 @@
                       </v-list-item-content>
                     </v-list-item>
                   </v-list>
-
                 </v-card>
-
               </v-col>
             </v-row>
-
           </template>
-
         </v-data-iterator>
 
       </v-container>
@@ -75,9 +81,9 @@
 
 <script>
 import Header from "./Header";
-import Search from "./Search";
+import Create from "./Create";
 export default {
-  components: {Search, Header},
+  components: {Create, Header},
 
   data: function() {
     return {
@@ -105,8 +111,8 @@ export default {
 
   methods: {
     getColor (state) {
-      if (state === "todo") return 'red'
-      else if (state === "doing") return 'orange'
+      if (state === "ToDo") return 'red'
+      else if (state === "Doing") return 'orange'
       else return 'green'
     },
   }
