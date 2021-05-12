@@ -75,7 +75,8 @@
           <v-btn
             color="blue darken-1"
             text
-            @click="dialog = false"
+            @click="validate"
+            :disabled="!valid"
             v-on:click="createMovie"
           >
             Save
@@ -118,6 +119,10 @@ export default {
   },
 
   methods: {
+    validate () {
+      this.$refs.form.validate()
+    },
+
     createMovie: function (){
       const url = 'http://localhost:3000/api/v1/movies'
       this.$axios.post(url, { movie: this.movie }).then((res) => {
