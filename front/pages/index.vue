@@ -8,7 +8,7 @@
 
         <v-data-iterator
           :items="movies"
-          :itemsPerPage="15"
+          :itemsPerPage="6"
         >
           <template class="text-center">
             <v-row>
@@ -23,7 +23,6 @@
                   <v-card-title class="subheading font-weight-bold">
                     {{ movie.title }}
                   </v-card-title>
-
 
                   <v-divider></v-divider>
 
@@ -116,7 +115,6 @@ export default {
       else return 'green'
     },
   }
-
 }
 
 </script>

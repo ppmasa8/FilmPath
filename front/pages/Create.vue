@@ -108,7 +108,6 @@ export default {
         'Done',
       ],
       rateItems: [
-        0,
         1,
         2,
         3,
@@ -124,13 +123,20 @@ export default {
     },
 
     createMovie: function (){
+      if (!this.movie.title || !this.movie.status || !this.movie.rate) return;
       const url = 'http://localhost:3000/api/v1/movies'
       this.$axios.post(url, { movie: this.movie }).then((res) => {
         this.$router.push({ path: '/' })
       }, (error) => {
         console.log(error);
       });
+      this.dialog = false
+      this.reloadPage()
     },
+
+    reloadPage(){
+      window.location.reload()
+    }
   }
 
 }
