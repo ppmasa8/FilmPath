@@ -80,9 +80,26 @@
                         <v-btn
                           icon
                           v-on:click="deleteMovie(movie.id)"
+                          @click="deleteMovieText(movie.title)"
                         >
                           <v-icon>mdi-delete</v-icon>
                         </v-btn>
+                        <v-snackbar
+                          v-model="snackbar"
+                        >
+                          {{ deletetext }}
+
+                          <template v-slot:action="{ attrs }">
+                            <v-btn
+                              color="pink"
+                              text
+                              v-bind="attrs"
+                              @click="snackbar = false"
+                            >
+                              Close
+                            </v-btn>
+                          </template>
+                        </v-snackbar>
                       </div>
                     </v-card-actions>
                   </v-list>
@@ -91,7 +108,6 @@
             </v-row>
           </template>
         </v-data-iterator>
-
       </v-container>
     </v-main>
   </v-app>
@@ -101,9 +117,8 @@
 import Header from "./Header";
 import Create from "./Create";
 import Edit from "./edit";
-import Delete from "./delete";
 export default {
-  components: {Delete, Edit, Create, Header},
+  components: {Edit, Create, Header},
 
   data: function() {
     return {
@@ -119,6 +134,8 @@ export default {
         { text: 'Rate', value: 'rate' },
         { text: 'Time', value: 'created_at'}
       ],
+      snackbar: false,
+      deletetext: "",
     }
   },
 
@@ -149,6 +166,11 @@ export default {
         this.fetchMovies();
       })
     },
+
+    deleteMovieText (title) {
+      this.snackbar = true;
+      this.deletetext = '"' + title + '"' +' is deleted on the lists.'
+    }
   }
 }
 
