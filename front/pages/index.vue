@@ -66,6 +66,25 @@
                         {{ movie.created_at.match(/^[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]/).join('') }}
                       </v-list-item-content>
                     </v-list-item>
+
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+
+                      <div>
+                        <edit></edit>
+                      </div>
+
+                      <div class="mx-2"></div>
+
+                      <div>
+                        <v-btn
+                          icon
+                          v-on:click="deleteMovie(movie.id)"
+                        >
+                          <v-icon>mdi-delete</v-icon>
+                        </v-btn>
+                      </div>
+                    </v-card-actions>
                   </v-list>
                 </v-card>
               </v-col>
@@ -81,8 +100,10 @@
 <script>
 import Header from "./Header";
 import Create from "./Create";
+import Edit from "./edit";
+import Delete from "./delete";
 export default {
-  components: {Create, Header},
+  components: {Delete, Edit, Create, Header},
 
   data: function() {
     return {
@@ -113,6 +134,20 @@ export default {
       if (state === "ToDo") return 'red'
       else if (state === "Doing") return 'orange'
       else return 'green'
+    },
+
+    fetchMovies() {
+      let url = 'http://localhost:3000/api/v1/movies'
+      this.$axios.get(url).then(response => {
+        this.movies = response.data;
+      });
+    },
+
+    deleteMovie (id) {
+      const url = '/api/v1/movies/' + id;
+      this.$axios.delete(url).then(res => {
+        this.fetchMovies();
+      })
     },
   }
 }
