@@ -3,7 +3,7 @@ class Api::V1::MoviesController < ApplicationController
 
   # GET /movies
   def index
-    @movies = Movie.all
+    @movies = Movie.all.order(:id)
 
     render json: @movies
   end

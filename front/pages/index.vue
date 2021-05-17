@@ -14,6 +14,7 @@
             <v-row>
               <v-col
                 v-for="movie in movies"
+                v-bind:key="movie.id"
                 cols="12"
                 sm="6"
                 md="4"
@@ -71,7 +72,7 @@
                       <v-spacer></v-spacer>
 
                       <div>
-                        <edit></edit>
+                        <edit v-bind:ids="movie.id"></edit>
                       </div>
 
                       <div class="mx-2"></div>
@@ -150,7 +151,8 @@ export default {
     getColor (state) {
       if (state === "ToDo") return 'red'
       else if (state === "Doing") return 'orange'
-      else return 'green'
+      else if (state === "Done") return 'green'
+      else return 'gray'
     },
 
     fetchMovies() {
@@ -170,7 +172,7 @@ export default {
     deleteMovieText (title) {
       this.snackbar = true;
       this.deletetext = '"' + title + '"' +' is deleted on the lists.'
-    }
+    },
   }
 }
 
