@@ -56,7 +56,7 @@
                     ></v-select>
                   </v-form>
                 </template>
-                
+
               </v-col>
             </v-row>
           </v-container>

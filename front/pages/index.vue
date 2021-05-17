@@ -78,29 +78,7 @@
                       <div class="mx-2"></div>
 
                       <div>
-                        <v-btn
-                          icon
-                          v-on:click="deleteMovie(movie.id)"
-                          @click="deleteMovieText(movie.title)"
-                        >
-                          <v-icon>mdi-delete</v-icon>
-                        </v-btn>
-                        <v-snackbar
-                          v-model="snackbar"
-                        >
-                          {{ deletetext }}
-
-                          <template v-slot:action="{ attrs }">
-                            <v-btn
-                              color="pink"
-                              text
-                              v-bind="attrs"
-                              @click="snackbar = false"
-                            >
-                              Close
-                            </v-btn>
-                          </template>
-                        </v-snackbar>
+                        <delete v-bind:params="movie"></delete>
                       </div>
                     </v-card-actions>
                   </v-list>
@@ -118,8 +96,9 @@
 import Header from "./Header";
 import Create from "./Create";
 import Edit from "./edit";
+import Delete from "./delete";
 export default {
-  components: {Edit, Create, Header},
+  components: {Delete, Edit, Create, Header},
 
   data: function() {
     return {
@@ -131,12 +110,10 @@ export default {
           sortable: false,
           value: 'title',
         },
-        { text: 'Status', value: 'status' },
-        { text: 'Rate', value: 'rate' },
-        { text: 'Time', value: 'created_at'}
+        {text: 'Status', value: 'status'},
+        {text: 'Rate', value: 'rate'},
+        {text: 'Time', value: 'created_at'}
       ],
-      snackbar: false,
-      deletetext: "",
     }
   },
 
@@ -153,25 +130,6 @@ export default {
       else if (state === "Doing") return 'orange'
       else if (state === "Done") return 'green'
       else return 'gray'
-    },
-
-    fetchMovies() {
-      let url = 'http://localhost:3000/api/v1/movies'
-      this.$axios.get(url).then(response => {
-        this.movies = response.data;
-      });
-    },
-
-    deleteMovie (id) {
-      const url = '/api/v1/movies/' + id;
-      this.$axios.delete(url).then(res => {
-        this.fetchMovies();
-      })
-    },
-
-    deleteMovieText (title) {
-      this.snackbar = true;
-      this.deletetext = '"' + title + '"' +' is deleted on the lists.'
     },
   }
 }
