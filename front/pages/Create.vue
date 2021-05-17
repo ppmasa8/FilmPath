@@ -21,7 +21,7 @@
       </template>
       <v-card>
         <v-card-title>
-          <span class="headline">Add movies on Lists.</span>
+          <span class="headline">Create movies.</span>
         </v-card-title>
         <v-card-text>
           <v-container>
