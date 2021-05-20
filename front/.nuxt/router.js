@@ -9,6 +9,7 @@ const _5ea616d6 = () => interopDefault(import('../pages/delete.vue' /* webpackCh
 const _224e3c18 = () => interopDefault(import('../pages/edit.vue' /* webpackChunkName: "pages/edit" */))
 const _542fec97 = () => interopDefault(import('../pages/Header.vue' /* webpackChunkName: "pages/Header" */))
 const _1bbad8e0 = () => interopDefault(import('../pages/inspire.vue' /* webpackChunkName: "pages/inspire" */))
+const _d1584e4a = () => interopDefault(import('../pages/top.vue' /* webpackChunkName: "pages/top" */))
 const _2dfb1658 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 const emptyFn = () => {}
@@ -42,6 +43,10 @@ export const routerOptions = {
     path: "/inspire",
     component: _1bbad8e0,
     name: "inspire"
+  }, {
+    path: "/top",
+    component: _d1584e4a,
+    name: "top"
   }, {
     path: "/",
     component: _2dfb1658,

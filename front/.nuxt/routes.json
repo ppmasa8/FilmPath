@@ -3,36 +3,49 @@
     "name": "Create",
     "path": "/Create",
     "component": "/app/pages/Create.vue",
-    "chunkName": "pages/Create"
+    "chunkName": "pages/Create",
+    "_name": "_2feddb86"
   },
   {
     "name": "delete",
     "path": "/delete",
     "component": "/app/pages/delete.vue",
-    "chunkName": "pages/delete"
+    "chunkName": "pages/delete",
+    "_name": "_5ea616d6"
   },
   {
     "name": "edit",
     "path": "/edit",
     "component": "/app/pages/edit.vue",
-    "chunkName": "pages/edit"
+    "chunkName": "pages/edit",
+    "_name": "_224e3c18"
   },
   {
     "name": "Header",
     "path": "/Header",
     "component": "/app/pages/Header.vue",
-    "chunkName": "pages/Header"
+    "chunkName": "pages/Header",
+    "_name": "_542fec97"
   },
   {
     "name": "inspire",
     "path": "/inspire",
     "component": "/app/pages/inspire.vue",
-    "chunkName": "pages/inspire"
+    "chunkName": "pages/inspire",
+    "_name": "_1bbad8e0"
+  },
+  {
+    "name": "top",
+    "path": "/top",
+    "component": "/app/pages/top.vue",
+    "chunkName": "pages/top",
+    "_name": "_d1584e4a"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/app/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_2dfb1658"
   }
 ]

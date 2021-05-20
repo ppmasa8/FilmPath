@@ -10,7 +10,7 @@
           class="mx-2 mb-4"
           fab
           dark
-          color="indigo"
+          color="red"
           v-bind="attrs"
           v-on="on"
         >

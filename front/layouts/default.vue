@@ -24,34 +24,29 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar
+    <v-row>
+      <v-app-bar
       :clipped-left="clipped"
       fixed
       app
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
       >
-        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>mdi-application</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>mdi-minus</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
+        <v-col cols="1">
+          <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+        </v-col>
+        <v-col cols="3">
+          <v-toolbar-title v-text="title" />
+        </v-col>
+        <v-col cols="7"></v-col>
+        <v-col cols="2">
+          <v-switch
+            v-model="theme"
+            :prepend-icon="themeIcon"
+            class="mt-5"
+          ></v-switch>
+        </v-col>
+      </v-app-bar>
+    </v-row>
 
-    </v-app-bar>
     <v-main>
       <v-container>
         <nuxt />
@@ -97,14 +92,22 @@
   </v-app>
 </template>
 
+
 <script>
-export default {
+import Vue from 'vue'
+export default Vue.extend({
   data () {
     return {
       clipped: false,
       drawer: false,
+      theme: true,
       fixed: false,
       items: [
+        {
+          icon: 'mdi-home',
+          title: 'Top Page',
+          to: '/top'
+        },
         {
           icon: 'mdi-apps',
           title: 'Registration Movie',
@@ -127,6 +130,18 @@ export default {
         'mdi-instagram',
       ],
     }
+  },
+
+  computed: {
+    themeIcon() {
+      return this.theme ? 'mdi-weather-night' : 'mdi-weather-sunny'
+    }
+  },
+
+  watch: {
+    theme() {
+      this.$vuetify.theme.dark = this.theme
+    }
   }
-}
+})
 </script>
