@@ -14,7 +14,7 @@
           v-bind="attrs"
           v-on="on"
         >
-          <v-icon dark>
+          <v-icon>
             mdi-plus
           </v-icon>
         </v-btn>

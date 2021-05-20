@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Create",
+    "path": "/Create",
+    "component": "/app/pages/Create.vue",
+    "chunkName": "pages/Create"
+  },
+  {
+    "name": "delete",
+    "path": "/delete",
+    "component": "/app/pages/delete.vue",
+    "chunkName": "pages/delete"
+  },
+  {
+    "name": "edit",
+    "path": "/edit",
+    "component": "/app/pages/edit.vue",
+    "chunkName": "pages/edit"
+  },
+  {
+    "name": "Header",
+    "path": "/Header",
+    "component": "/app/pages/Header.vue",
+    "chunkName": "pages/Header"
+  },
+  {
+    "name": "inspire",
+    "path": "/inspire",
+    "component": "/app/pages/inspire.vue",
+    "chunkName": "pages/inspire"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/app/pages/index.vue",
+    "chunkName": "pages/index"
+  }
+]

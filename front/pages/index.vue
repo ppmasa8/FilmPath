@@ -75,11 +75,13 @@
                         <edit v-bind:ids="movie.id"></edit>
                       </div>
 
-                      <div class="mx-2"></div>
+                      <div class="mx-3"></div>
 
                       <div>
                         <delete v-bind:params="movie"></delete>
                       </div>
+
+                      <div class="mx-2"></div>
                     </v-card-actions>
                   </v-list>
                 </v-card>
