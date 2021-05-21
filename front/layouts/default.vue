@@ -114,9 +114,19 @@ export default Vue.extend({
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
+          icon: 'mdi-magnify',
           title: 'Search Movies',
-          to: '/inspire'
+          to: '/search'
+        },
+        {
+          icon: 'mdi-book',
+          title: 'Catalog',
+          to: '/catalog'
+        },
+        {
+          icon: 'mdi-chart-areaspline-variant',
+          title: 'Analytics',
+          to: '/analytics'
         }
       ],
       miniVariant: false,

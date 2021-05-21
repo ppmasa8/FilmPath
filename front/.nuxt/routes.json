@@ -1,5 +1,19 @@
 [
   {
+    "name": "analytics",
+    "path": "/analytics",
+    "component": "/app/pages/analytics.vue",
+    "chunkName": "pages/analytics",
+    "_name": "_c6432fe8"
+  },
+  {
+    "name": "catalog",
+    "path": "/catalog",
+    "component": "/app/pages/catalog.vue",
+    "chunkName": "pages/catalog",
+    "_name": "_4e670e9f"
+  },
+  {
     "name": "Create",
     "path": "/Create",
     "component": "/app/pages/Create.vue",
@@ -28,11 +42,11 @@
     "_name": "_542fec97"
   },
   {
-    "name": "inspire",
-    "path": "/inspire",
-    "component": "/app/pages/inspire.vue",
-    "chunkName": "pages/inspire",
-    "_name": "_1bbad8e0"
+    "name": "search",
+    "path": "/search",
+    "component": "/app/pages/search.vue",
+    "chunkName": "pages/search",
+    "_name": "_3d268e12"
   },
   {
     "name": "top",

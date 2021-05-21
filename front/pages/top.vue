@@ -6,18 +6,18 @@
     >
     </v-parallax>
 
-    <v-divider
-      class="mt-9 mb-4"
-    ></v-divider>
-
     <v-row>
       <v-col cols="2">
-        <h1 class="display-1 font-weight-bold">
+        <h1 class="display-1 font-weight-bold mt-9">
           Examples
         </h1>
       </v-col>
       <v-col cols="5"></v-col>
     </v-row>
+
+    <v-divider
+      class="mt-3 mb-4"
+    ></v-divider>
 
     <v-row>
       <v-col
@@ -47,8 +47,76 @@
 
           <v-spacer></v-spacer>
 
-        </v-card>
+          <v-divider class="mx-4"></v-divider>
 
+          <v-card-actions class="pa-4">
+            Rate this movie
+            <v-spacer></v-spacer>
+            <span class="grey--text text--lighten-2 caption mr-2">
+              ({{ movie.rating }})
+            </span>
+            <v-rating
+              v-model="movie.rating"
+              background-color="white"
+              color="yellow accent-4"
+              dense
+              half-increments
+              hover
+              size="18"
+            ></v-rating>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
+
+    <v-row>
+      <v-col cols="5">
+        <h1 class="display-1 font-weight-bold mt-9">
+          What can we do?
+        </h1>
+      </v-col>
+      <v-col cols="5"></v-col>
+    </v-row>
+
+    <v-divider
+      class="mt-3 mb-7"
+    ></v-divider>
+
+    <v-row>
+      <v-col cols="12" class="mb-10">
+        <v-timeline
+          align-top
+          :dense="$vuetify.breakpoint.smAndDown"
+        >
+          <v-timeline-item
+            v-for="(item, i) in items"
+            :key="i"
+            :color="item.color"
+            :icon="item.icon"
+            fill-dot
+          >
+            <v-card
+              :color="item.color"
+              dark
+            >
+              <v-card-title class="title">
+                {{ item.title }}
+              </v-card-title>
+              <v-card-text class="white text--primary">
+                <p class="pt-4 blue-grey--text">{{ item.text }}</p>
+
+                <v-btn
+                  :color="item.color"
+                  class="mx-0"
+                  outlined
+                  :to="item.to"
+                >
+                  GO
+                </v-btn>
+              </v-card-text>
+            </v-card>
+          </v-timeline-item>
+        </v-timeline>
       </v-col>
     </v-row>
   </v-app>
@@ -62,19 +130,52 @@ export default {
         {
           img: 'https://stat.ameba.jp/user_images/20171006/20/ameria66/e5/55/j/t02200325_0676100014043079813.jpg?caw=800',
           title: 'Dancer in the Dark',
-          subtitle: 'With Björk, a popular female singer from Iceland, in the lead role, the film has a novel structure with handheld camera work, speedy screen development with many jump cuts, and brightly colored musical scenes of the unfortunate protagonists imagination.',
+          subtitle: 'The film\'s innovative composition includes handheld camera work, speedy screen development with many jump cuts, and colorful music scenes that color the imagination of the hapless protagonist.',
+          rating: 4.3,
         },
         {
           img: 'https://hanazonomagazine.files.wordpress.com/2012/05/midnight-in-paris-poster.jpg',
           title: 'Midnight in Paris',
           subtitle: 'Gil, a Hollywood screenwriter, is staying in Paris with his fiancée and her parents. One night, he is led astray by the sound of a bell signaling midnight, and finds himself in the 1920s, a time of blossoming art!',
+          rating: 4.6,
         },
         {
           img: 'https://images-na.ssl-images-amazon.com/images/I/91BsCJLBXoL._AC_SL1500_.jpg',
           title: 'Ex Machina',
-          subtitle: 'Caleb works as a programmer at Blue Book, an IT company famous for its search engine, and wins the right to visit the home of the company\'s president, Nathan, by lottery. Caleb is invited by helicopter to Nathan\'s home, which is located deep in a vast mountainous area, and is asked to demonstrate an AI that Nathan is working on...',
+          subtitle: 'Caleb, who works as a programmer for a famous IT company, wins the right to visit the home of the company president, Nathan, by lottery. What will happen to Caleb when he is invited to Nathan\'s house...?',
+          rating: 4.2,
         },
-      ]
+      ],
+      items: [
+        {
+          color: 'red lighten-2',
+          icon: 'mdi-apps',
+          title: 'Keep a diary for movies',
+          text: 'Keep a diary of the movies you\'ve seen.',
+          to: '/'
+        },
+        {
+          color: 'purple darken-1',
+          icon: 'mdi-magnify',
+          title: 'Find out from a lot of movies',
+          text: 'When you\'ve finished keeping your journal, try to find a movie that looks good.',
+          to: '/inspire'
+        },
+        {
+          color: 'green lighten-1',
+          icon: 'mdi-book',
+          title: 'Or, Browse the list',
+          text: 'Or you could try to find it randomly in the list.',
+          to: '/catalog'
+        },
+        {
+          color: 'indigo',
+          icon: 'mdi-chart-areaspline-variant',
+          title: 'Watch your trend for analytics',
+          text: 'Finally, it would be interesting to see the trends of the movies you\'ve seen.',
+          to: '/analytics'
+        },
+      ],
     }
 
   }
