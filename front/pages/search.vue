@@ -1,6 +1,10 @@
 <template>
   <div class="search">
-    <h1>Search</h1>
+    <h1
+      class="mt-4"
+    >
+      Search
+    </h1>
     <v-text-field
       label="Search"
       :rules="rules"
