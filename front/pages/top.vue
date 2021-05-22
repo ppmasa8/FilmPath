@@ -145,6 +145,24 @@ export default {
           subtitle: 'Caleb, who works as a programmer for a famous IT company, wins the right to visit the home of the company president, Nathan, by lottery. What will happen to Caleb when he is invited to Nathan\'s house...?',
           rating: 4.2,
         },
+        {
+          img: 'https://upload.wikimedia.org/wikipedia/en/a/a7/Happy_Death_Day_poster.png',
+          title: 'Happy Death Day',
+          subtitle: 'Tree is a hot, but self-centered, high-flying, and truly evil woman.Naturally, she is killed by a masked killer, as promised.\n' + 'For some reason, when she is killed, the same day begins to repeat itself...?',
+          rating: '3.9'
+        },
+        {
+          img: 'https://images-na.ssl-images-amazon.com/images/I/81WsiN9oDSL._AC_SL1254_.jpg',
+          title: 'The Truman Show',
+          subtitle: 'One day, a father who is supposed to be dead appears in the crowd. Truman tells his mother about it, but she doesn\'t take it well, saying he was mistaken. This is when he starts to feel suspicious about his surroundings.',
+          rating: '4.4'
+        },
+        {
+          img: 'https://i.ytimg.com/vi/Tn0sMRLrbp0/movieposter_en.jpg',
+          title: 'Whiplash',
+          subtitle: 'Nineteen-year-old Andrew Neiman attended the Shaffer Conservatory of Music, America\'s premier music school, with aspirations of becoming a "great" jazz drummer like Buddy Rich.He began to immerse himself in drumming practice.',
+          rating: '4.8'
+        },
       ],
       items: [
         {
