@@ -94,9 +94,9 @@ export default {
   data: () => {
     return {
       movie: {
-        title: '',
+        title : '',
         status: '',
-        rate: '',
+        rate  : '',
       },
       valid: true,
       dialog: false,
@@ -134,10 +134,10 @@ export default {
     setmovieEdit(id) {
       const url = '/api/v1/movies/' + id;
       this.$axios.get(url).then(res => {
-        this.movie.id = id;
-        this.movie.title = res.data.title;
+        this.movie.id     = id;
+        this.movie.title  = res.data.title;
         this.movie.status = res.data.status;
-        this.movie.rate = res.data.rate;
+        this.movie.rate   = res.data.rate;
       });
     },
 

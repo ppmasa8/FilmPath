@@ -123,7 +123,7 @@ export default {
     const url = 'http://localhost:3000/api/v1/movies'
     this.$axios
       .get(url)
-      .then(response => (this.movies = response.data))
+      .then(res => (this.movies = res.data))
   },
 
   methods: {

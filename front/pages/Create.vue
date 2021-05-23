@@ -92,11 +92,11 @@ export default {
   data: () => {
     return {
       movie: {
-        title: '',
+        title : '',
         status: '',
-        rate: '',
+        rate  : '',
       },
-      valid: true,
+      valid : true,
       dialog: false,
       titleRules: [
         v => !!v || 'Title is required',

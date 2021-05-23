@@ -128,70 +128,70 @@ export default {
     return {
       movies: [
         {
-          img: 'https://stat.ameba.jp/user_images/20171006/20/ameria66/e5/55/j/t02200325_0676100014043079813.jpg?caw=800',
-          title: 'Dancer in the Dark',
+          img     : 'https://stat.ameba.jp/user_images/20171006/20/ameria66/e5/55/j/t02200325_0676100014043079813.jpg?caw=800',
+          title   : 'Dancer in the Dark',
           subtitle: 'The film\'s innovative composition includes handheld camera work, speedy screen development with many jump cuts, and colorful music scenes that color the imagination of the hapless protagonist.',
-          rating: 4.3,
+          rating  : 4.3,
         },
         {
-          img: 'https://hanazonomagazine.files.wordpress.com/2012/05/midnight-in-paris-poster.jpg',
-          title: 'Midnight in Paris',
+          img     : 'https://hanazonomagazine.files.wordpress.com/2012/05/midnight-in-paris-poster.jpg',
+          title   : 'Midnight in Paris',
           subtitle: 'Gil, a Hollywood screenwriter, is staying in Paris with his fiancée and her parents. One night, he is led astray by the sound of a bell signaling midnight, and finds himself in the 1920s, a time of blossoming art!',
-          rating: 4.6,
+          rating  : 4.6,
         },
         {
-          img: 'https://images-na.ssl-images-amazon.com/images/I/91BsCJLBXoL._AC_SL1500_.jpg',
-          title: 'Ex Machina',
+          img     : 'https://images-na.ssl-images-amazon.com/images/I/91BsCJLBXoL._AC_SL1500_.jpg',
+          title   : 'Ex Machina',
           subtitle: 'Caleb, who works as a programmer for a famous IT company, wins the right to visit the home of the company president, Nathan, by lottery. What will happen to Caleb when he is invited to Nathan\'s house...?',
-          rating: 4.2,
+          rating  : 4.2,
         },
         {
-          img: 'https://upload.wikimedia.org/wikipedia/en/a/a7/Happy_Death_Day_poster.png',
-          title: 'Happy Death Day',
+          img     : 'https://upload.wikimedia.org/wikipedia/en/a/a7/Happy_Death_Day_poster.png',
+          title   : 'Happy Death Day',
           subtitle: 'Tree is a hot, but self-centered, high-flying, and truly evil woman.Naturally, she is killed by a masked killer, as promised.\n' + 'For some reason, when she is killed, the same day begins to repeat itself...?',
-          rating: '3.9'
+          rating  : '3.9'
         },
         {
-          img: 'https://images-na.ssl-images-amazon.com/images/I/81WsiN9oDSL._AC_SL1254_.jpg',
-          title: 'The Truman Show',
+          img     : 'https://images-na.ssl-images-amazon.com/images/I/81WsiN9oDSL._AC_SL1254_.jpg',
+          title   : 'The Truman Show',
           subtitle: 'One day, a father who is supposed to be dead appears in the crowd. Truman tells his mother about it, but she doesn\'t take it well, saying he was mistaken. This is when he starts to feel suspicious about his surroundings.',
-          rating: '4.4'
+          rating  : '4.4'
         },
         {
-          img: 'https://i.ytimg.com/vi/Tn0sMRLrbp0/movieposter_en.jpg',
-          title: 'Whiplash',
+          img     : 'https://i.ytimg.com/vi/Tn0sMRLrbp0/movieposter_en.jpg',
+          title   : 'Whiplash',
           subtitle: 'Nineteen-year-old Andrew Neiman attended the Shaffer Conservatory of Music, America\'s premier music school, with aspirations of becoming a "great" jazz drummer like Buddy Rich.He began to immerse himself in drumming practice.',
-          rating: '4.8'
+          rating  : '4.8'
         },
       ],
       items: [
         {
           color: 'red lighten-2',
-          icon: 'mdi-apps',
+          icon : 'mdi-apps',
           title: 'Keep a diary for movies',
-          text: 'Keep a diary of the movies you\'ve seen.',
-          to: '/'
+          text : 'Keep a diary of the movies you\'ve seen.',
+          to   : '/'
         },
         {
           color: 'purple darken-1',
-          icon: 'mdi-magnify',
+          icon : 'mdi-magnify',
           title: 'Find out from a lot of movies',
-          text: 'When you\'ve finished keeping your journal, try to find a movie that looks good.',
-          to: '/inspire'
+          text : 'When you\'ve finished keeping your journal, try to find a movie that looks good.',
+          to   : '/inspire'
         },
         {
           color: 'green lighten-1',
-          icon: 'mdi-book',
+          icon : 'mdi-book',
           title: 'Or, Browse the list',
-          text: 'Or you could try to find it randomly in the list.',
-          to: '/catalog'
+          text : 'Or you could try to find it randomly in the list.',
+          to   : '/catalog'
         },
         {
           color: 'indigo',
-          icon: 'mdi-chart-areaspline-variant',
+          icon : 'mdi-chart-areaspline-variant',
           title: 'Watch your trend for analytics',
-          text: 'Finally, it would be interesting to see the trends of the movies you\'ve seen.',
-          to: '/analytics'
+          text : 'Finally, it would be interesting to see the trends of the movies you\'ve seen.',
+          to   : '/analytics'
         },
       ],
     }

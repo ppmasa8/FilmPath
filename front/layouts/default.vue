@@ -99,40 +99,40 @@ export default Vue.extend({
   data () {
     return {
       clipped: false,
-      drawer: false,
-      theme: true,
-      fixed: false,
+      drawer : false,
+      theme  : true,
+      fixed  : false,
       items: [
         {
-          icon: 'mdi-home',
+          icon : 'mdi-home',
           title: 'Top Page',
-          to: '/top'
+          to   : '/top'
         },
         {
-          icon: 'mdi-apps',
+          icon : 'mdi-apps',
           title: 'Registration Movie',
-          to: '/'
+          to   : '/'
         },
         {
-          icon: 'mdi-magnify',
+          icon : 'mdi-magnify',
           title: 'Search Movies',
-          to: '/search'
+          to   : '/search'
         },
         {
-          icon: 'mdi-book',
+          icon : 'mdi-book',
           title: 'Catalog',
-          to: '/catalog'
+          to   : '/catalog'
         },
         {
-          icon: 'mdi-chart-areaspline-variant',
+          icon : 'mdi-chart-areaspline-variant',
           title: 'Analytics',
-          to: '/analytics'
+          to   : '/analytics'
         }
       ],
       miniVariant: false,
-      right: true,
+      right      : true,
       rightDrawer: false,
-      title: 'FilmPath',
+      title      : 'FilmPath',
       icons: [
         'mdi-facebook',
         'mdi-twitter',

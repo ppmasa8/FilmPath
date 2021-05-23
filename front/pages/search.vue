@@ -12,7 +12,10 @@
       hide-details="auto"
       @keyup='getResult(query)'
     ></v-text-field>
-    <div v-for='result in results' :key='result.id'>
+    <div
+      v-for='result in results'
+      :key='result.id'
+    >
       <p>{{ result.title }}</p>
       <img v-bind:src="'http://image.tmdb.org/t/p/w300/' + result.poster_path" width='100px'>
     </div>
@@ -37,8 +40,8 @@ export default {
     getResult(query) {
       if (!this.query) return;
       const api_key = 'bca5abc8ed91fe4f233974561c897392'
-      axios.get('https://api.themoviedb.org/3/search/movie?api_key=' + api_key + '&query=' + query).then(response => {
-        this.results = response.data.results
+      axios.get('https://api.themoviedb.org/3/search/movie?api_key=' + api_key + '&query=' + query).then(res => {
+        this.results = res.data.results
       });
       console.log(this.results)
     },
