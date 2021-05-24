@@ -39,8 +39,8 @@ export default {
   methods: {
     getResult(query) {
       if (!this.query) return;
-      const api_key = 'bca5abc8ed91fe4f233974561c897392'
-      axios.get('https://api.themoviedb.org/3/search/movie?api_key=' + api_key + '&query=' + query).then(res => {
+      const API_KEY = 'bca5abc8ed91fe4f233974561c897392'
+      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`).then(res => {
         this.results = res.data.results
       });
       console.log(this.results)
