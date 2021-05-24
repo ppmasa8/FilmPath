@@ -35,13 +35,6 @@
     "_name": "_224e3c18"
   },
   {
-    "name": "Header",
-    "path": "/Header",
-    "component": "/app/pages/Header.vue",
-    "chunkName": "pages/Header",
-    "_name": "_542fec97"
-  },
-  {
     "name": "search",
     "path": "/search",
     "component": "/app/pages/search.vue",

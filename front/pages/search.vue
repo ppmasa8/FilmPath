@@ -12,6 +12,7 @@
       hide-details="auto"
       @keyup='getResult(query)'
     ></v-text-field>
+
     <div
       v-for='result in results'
       :key='result.id'

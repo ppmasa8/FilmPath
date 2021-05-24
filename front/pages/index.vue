@@ -21,6 +21,8 @@
                 lg="4"
               >
                 <v-card>
+
+
                   <v-card-title class="subheading font-weight-bold">
                     {{ movie.title }}
                   </v-card-title>
@@ -95,12 +97,12 @@
 </template>
 
 <script>
-import Header from "./Header";
 import Create from "./Create";
 import Edit from "./edit";
 import Delete from "./delete";
+import axios from "axios";
 export default {
-  components: {Delete, Edit, Create, Header},
+  components: {Delete, Edit, Create},
 
   data: function() {
     return {
@@ -116,6 +118,7 @@ export default {
         {text: 'Rate', value: 'rate'},
         {text: 'Time', value: 'created_at'}
       ],
+      results: [],
     }
   },
 
@@ -128,11 +131,21 @@ export default {
 
   methods: {
     getColor (state) {
+      if (!state) return;
       if (state === "ToDo") return 'red'
       else if (state === "Doing") return 'orange'
       else if (state === "Done") return 'green'
       else return 'gray'
     },
+
+    getResult(title) {
+      if (!title) return;
+      const API_KEY = 'bca5abc8ed91fe4f233974561c897392'
+      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${title}`).then(res => {
+        this.results = res.data.results[0].poster_path
+      });
+      return this.results
+    }
   }
 }
 

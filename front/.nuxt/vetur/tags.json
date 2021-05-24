@@ -1,8 +1,8 @@
 {
-  "Logo": {
-    "description": "Auto imported from components/Logo.vue"
+  "Movie": {
+    "description": "Auto imported from components/Movie.vue"
   },
-  "VuetifyLogo": {
-    "description": "Auto imported from components/VuetifyLogo.vue"
+  "Spinner": {
+    "description": "Auto imported from components/Spinner.vue"
   }
 }

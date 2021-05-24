@@ -1,7 +1,7 @@
 import { wrapFunctional } from './utils'
 
-export { default as Logo } from '../../components/Logo.vue'
-export { default as VuetifyLogo } from '../../components/VuetifyLogo.vue'
+export { default as Movie } from '../../components/Movie.vue'
+export { default as Spinner } from '../../components/Spinner.vue'
 
-export const LazyLogo = import('../../components/Logo.vue' /* webpackChunkName: "components/logo" */).then(c => wrapFunctional(c.default || c))
-export const LazyVuetifyLogo = import('../../components/VuetifyLogo.vue' /* webpackChunkName: "components/vuetify-logo" */).then(c => wrapFunctional(c.default || c))
+export const LazyMovie = import('../../components/Movie.vue' /* webpackChunkName: "components/movie" */).then(c => wrapFunctional(c.default || c))
+export const LazySpinner = import('../../components/Spinner.vue' /* webpackChunkName: "components/spinner" */).then(c => wrapFunctional(c.default || c))
