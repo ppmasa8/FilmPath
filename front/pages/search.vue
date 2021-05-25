@@ -13,13 +13,26 @@
       @keyup='getResult(query)'
     ></v-text-field>
 
-    <div
-      v-for='result in results'
-      :key='result.id'
-    >
-      <p>{{ result.title }}</p>
-      <img v-bind:src="'http://image.tmdb.org/t/p/w300/' + result.poster_path" width='100px'>
-    </div>
+    <template class="text-center">
+      <v-row>
+        <v-col
+          v-for='result in results'
+          :key='result.id'
+          cols="12"
+          sm="6"
+          md="4"
+          lg="4"
+        >
+          <v-card>
+            <v-card-title class="subheading font-weight-bold">
+              {{ result.title }}
+            </v-card-title>
+            <v-img v-bind:src="'http://image.tmdb.org/t/p/w300/' + result.poster_path">
+            </v-img>
+          </v-card>
+        </v-col>
+      </v-row>
+    </template>
   </div>
 </template>
 
