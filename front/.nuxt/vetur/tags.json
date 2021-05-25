@@ -1,6 +1,6 @@
 {
-  "Movie": {
-    "description": "Auto imported from components/Movie.vue"
+  "Movies": {
+    "description": "Auto imported from components/Movies.vue"
   },
   "Spinner": {
     "description": "Auto imported from components/Spinner.vue"

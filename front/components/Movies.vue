@@ -1,72 +1,80 @@
 <template>
-  <div id="newMovies">
-    <div id="slide">
-      <h1>{{ typeDescription }}</h1>
-      <div v-show="showLoading" id="loadingMovie">
-        <Spinner />
-      </div>
-      <carousel
-        :per-page="4"
-        :navigate-to="0"
-        :mouse-drag="true"
-        :paginationEnabled="false"
-        :navigationEnabled="true"
-        :navigationClickTargetSize="9"
-      >
-        <slide
-          v-bind:key="movie.imdbID + removeIdDuplicate()"
-          v-for="movie in movies"
-          id="movieDiv"
+  <div>
+    <div id="newMovies">
+      <div id="slide">
+        <h1 class="grey--text">{{ Title }}</h1>
+
+        <div v-show="showLoading" id="loadingMovie">
+          <Spinner />
+        </div>
+        <h1></h1>
+        <carousel
+          :per-page="4"
+          :navigate-to="0"
+          :mouse-drag="true"
+          :paginationEnabled="false"
+          :navigationEnabled="true"
+          :navigationClickTargetSize="9"
         >
-          <div v-on:click="showDetail(movie.imdbID)">
-            <img :src="movie.Poster" id="imagemPosterSlide" />
-          </div>
-        </slide>
-      </carousel>
+          <slide
+            v-for="movie in movies"
+            id="movieDiv"
+          >
+            <div>
+              <img
+                v-bind:src="'https://image.tmdb.org/t/p/original' + movie.poster_path"
+                id="imagemPosterSlide"
+              >
+            </div>
+          </slide>
+        </carousel>
+      </div>
     </div>
   </div>
 </template>
 
+
+
+
 <script>
+import axios from 'axios'
 import { Carousel, Slide } from "vue-carousel";
 import Spinner from "../components/Spinner";
-import { Movies } from "../services/api";
 export default {
+
+  props: ["Title", "fetchUrl"],
   name: "Movies",
   data() {
     return {
       movies: [],
       showLoading: true,
       paginationButtons: false
-    };
+    }
   },
-  props: ["typeMovie", "typeDescription"],
   components: {
     Carousel,
     Slide,
     Spinner
-  },
+  }
+  ,
   async mounted() {
     this.showLoading = true;
     try {
-      const response = await Movies(this.typeMovie).get();
-      this.movies = response.data.Search;
+      const url = "https://api.themoviedb.org/3/discover/tv?api_key="
+      const API_KEY = "bca5abc8ed91fe4f233974561c897392"
+      const response = await axios.get( url + API_KEY + this.fetchUrl );
+      this.movies = response.data.results;
     } catch (error) {
       console.error(error);
     } finally {
       this.showLoading = false;
     }
   },
-  methods: {
-    showDetail(_id) {
-      this.$router.push({ name: "Detail", params: { id: _id } });
-    },
-    removeIdDuplicate() {
-      return String(Math.random());
-    }
-  }
-};
+
+}
+
 </script>
+
 <style>
 #slide {
   width: 90%;
