@@ -7,3 +7,8 @@ Dialy for movie.
 - The Movie database
 - Nuxt.js
 - Deploy tools
+
+### Functions.
+- CRUD actions.
+- RESTful at Rails api.
+- Asynchronous processing.
