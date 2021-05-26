@@ -1,4 +1,7 @@
 {
+  "Images": {
+    "description": "Auto imported from components/Images.vue"
+  },
   "Movies": {
     "description": "Auto imported from components/Movies.vue"
   },

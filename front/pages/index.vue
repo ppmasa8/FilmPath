@@ -22,6 +22,7 @@
               >
                 <v-card>
 
+                  <Images v-bind:Title="movie.title"></Images>
 
                   <v-card-title class="subheading font-weight-bold">
                     {{ movie.title }}
@@ -100,9 +101,10 @@
 import Create from "./Create";
 import Edit from "./edit";
 import Delete from "./delete";
+import Images from "../components/Images";
 import axios from "axios";
 export default {
-  components: {Delete, Edit, Create},
+  components: {Delete, Edit, Create, Images},
 
   data: function() {
     return {
