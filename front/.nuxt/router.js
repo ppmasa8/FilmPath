@@ -10,6 +10,7 @@ const _2feddb86 = () => interopDefault(import('../pages/Create.vue' /* webpackCh
 const _5ea616d6 = () => interopDefault(import('../pages/delete.vue' /* webpackChunkName: "pages/delete" */))
 const _224e3c18 = () => interopDefault(import('../pages/edit.vue' /* webpackChunkName: "pages/edit" */))
 const _3d268e12 = () => interopDefault(import('../pages/search.vue' /* webpackChunkName: "pages/search" */))
+const _7b299d67 = () => interopDefault(import('../pages/show.vue' /* webpackChunkName: "pages/show" */))
 const _d1584e4a = () => interopDefault(import('../pages/top.vue' /* webpackChunkName: "pages/top" */))
 const _2dfb1658 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -48,6 +49,10 @@ export const routerOptions = {
     path: "/search",
     component: _3d268e12,
     name: "search"
+  }, {
+    path: "/show",
+    component: _7b299d67,
+    name: "show"
   }, {
     path: "/top",
     component: _d1584e4a,

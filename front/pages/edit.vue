@@ -119,9 +119,6 @@ export default {
     }
   },
 
-  computed() {
-  },
-
   mounted() {
     this.setmovieEdit(this.ids);
   },

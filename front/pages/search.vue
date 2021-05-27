@@ -50,6 +50,7 @@ export default {
       results: ''
     }
   },
+
   methods: {
     getResult(query) {
       if (!this.query) return;

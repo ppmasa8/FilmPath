@@ -51,13 +51,15 @@
                     <v-list-item>
                       <v-list-item-content>Rate:</v-list-item-content>
                       <v-list-item-content class="align-end">
-                        <div class="text-center">
+                        <div>
                           <v-rating
                             v-model="movie.rate"
-                            color="yellow darken-3"
+                            color="yellow accent-4"
                             background-color="grey darken-1"
                             hover
+                            dense
                             small
+                            size="18"
                           >
                           </v-rating>
                         </div>
@@ -73,6 +75,12 @@
 
                     <v-card-actions>
                       <v-spacer></v-spacer>
+
+                      <div>
+                        <show v-bind:Title="movie.title"></show>
+                      </div>
+
+                      <div class="mx-3"></div>
 
                       <div>
                         <edit v-bind:ids="movie.id"></edit>
@@ -97,14 +105,16 @@
   </v-app>
 </template>
 
+
 <script>
 import Create from "./Create";
 import Edit from "./edit";
 import Delete from "./delete";
+import Show from "./show";
 import Images from "../components/Images";
 import axios from "axios";
 export default {
-  components: {Delete, Edit, Create, Images},
+  components: {Delete, Edit, Create, Show, Images},
 
   data: function() {
     return {
@@ -139,15 +149,6 @@ export default {
       else if (state === "Done") return 'green'
       else return 'gray'
     },
-
-    getResult(title) {
-      if (!title) return;
-      const API_KEY = 'bca5abc8ed91fe4f233974561c897392'
-      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${title}`).then(res => {
-        this.results = res.data.results[0].poster_path
-      });
-      return this.results
-    }
   }
 }
 

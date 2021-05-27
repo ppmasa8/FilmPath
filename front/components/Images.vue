@@ -1,11 +1,12 @@
 <template>
   <div>
-    <v-img
-      :src="'https://image.tmdb.org/t/p/original' + results"
-    >
-    </v-img>
+    <v-card>
+      <v-img
+        :src="'http://image.tmdb.org/t/p/w300/' + results"
+      >
+      </v-img>
+    </v-card>
   </div>
-
 </template>
 
 <script>

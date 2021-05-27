@@ -42,6 +42,13 @@
     "_name": "_3d268e12"
   },
   {
+    "name": "show",
+    "path": "/show",
+    "component": "/app/pages/show.vue",
+    "chunkName": "pages/show",
+    "_name": "_7b299d67"
+  },
+  {
     "name": "top",
     "path": "/top",
     "component": "/app/pages/top.vue",

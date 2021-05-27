@@ -2,12 +2,11 @@
   <div>
     <div id="newMovies">
       <div id="slide">
-        <h1 class="grey--text">{{ Title }}</h1>
+        <h1 class="blue-grey--text">{{ Title }}</h1>
 
         <div v-show="showLoading" id="loadingMovie">
           <Spinner />
         </div>
-        <h1></h1>
         <carousel
           :per-page="4"
           :navigate-to="0"
@@ -20,7 +19,7 @@
             v-for="movie in movies"
             id="movieDiv"
           >
-            <div>
+            <div v-on:click="showDetail(movie)">
               <img
                 v-bind:src="'https://image.tmdb.org/t/p/original' + movie.poster_path"
                 id="imagemPosterSlide"
@@ -32,9 +31,6 @@
     </div>
   </div>
 </template>
-
-
-
 
 <script>
 import axios from 'axios'
@@ -51,12 +47,13 @@ export default {
       paginationButtons: false
     }
   },
+
   components: {
     Carousel,
     Slide,
     Spinner
-  }
-  ,
+  },
+
   async mounted() {
     this.showLoading = true;
     try {
@@ -70,7 +67,6 @@ export default {
       this.showLoading = false;
     }
   },
-
 }
 
 </script>
