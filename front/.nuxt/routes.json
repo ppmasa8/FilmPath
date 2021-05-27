@@ -28,6 +28,13 @@
     "_name": "_5ea616d6"
   },
   {
+    "name": "Detail",
+    "path": "/Detail",
+    "component": "/app/pages/Detail.vue",
+    "chunkName": "pages/Detail",
+    "_name": "_bee6bf4a"
+  },
+  {
     "name": "edit",
     "path": "/edit",
     "component": "/app/pages/edit.vue",

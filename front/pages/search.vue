@@ -27,8 +27,7 @@
             <v-card-title class="subheading font-weight-bold">
               {{ result.title }}
             </v-card-title>
-            <v-img v-bind:src="'http://image.tmdb.org/t/p/w300/' + result.poster_path">
-            </v-img>
+            <Detail v-bind:ids="result.id"></Detail>
           </v-card>
         </v-col>
       </v-row>
@@ -38,8 +37,10 @@
 
 <script>
 import axios from 'axios'
+import Detail from "./Detail";
 export default {
   name: 'search',
+  components: {Detail},
   data () {
     return {
       rules: [
@@ -47,7 +48,8 @@ export default {
         value => (value && value.length >= 3) || 'Min 3 characters',
       ],
       query: '',
-      results: ''
+      results: '',
+      dialog: '',
     }
   },
 
@@ -60,7 +62,6 @@ export default {
       });
       console.log(this.results)
     },
-
 
     validate () {
       this.$refs.form.validate()

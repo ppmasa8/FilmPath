@@ -19,12 +19,11 @@
             v-for="movie in movies"
             id="movieDiv"
           >
-            <div v-on:click="showDetail(movie)">
-              <img
+              <v-img
                 v-bind:src="'https://image.tmdb.org/t/p/original' + movie.poster_path"
                 id="imagemPosterSlide"
               >
-            </div>
+              </v-img>
           </slide>
         </carousel>
       </div>
@@ -32,26 +31,30 @@
   </div>
 </template>
 
+
 <script>
 import axios from 'axios'
 import { Carousel, Slide } from "vue-carousel";
 import Spinner from "../components/Spinner";
+import Detail from "../pages/Detail";
 export default {
-
   props: ["Title", "fetchUrl"],
   name: "Movies",
   data() {
     return {
       movies: [],
+      results: '',
       showLoading: true,
-      paginationButtons: false
+      paginationButtons: false,
+      dialog: false
     }
   },
 
   components: {
+    Detail,
     Carousel,
     Slide,
-    Spinner
+    Spinner,
   },
 
   async mounted() {

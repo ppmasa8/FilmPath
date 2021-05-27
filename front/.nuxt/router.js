@@ -8,6 +8,7 @@ const _c6432fe8 = () => interopDefault(import('../pages/analytics.vue' /* webpac
 const _4e670e9f = () => interopDefault(import('../pages/catalog.vue' /* webpackChunkName: "pages/catalog" */))
 const _2feddb86 = () => interopDefault(import('../pages/Create.vue' /* webpackChunkName: "pages/Create" */))
 const _5ea616d6 = () => interopDefault(import('../pages/delete.vue' /* webpackChunkName: "pages/delete" */))
+const _bee6bf4a = () => interopDefault(import('../pages/Detail.vue' /* webpackChunkName: "pages/Detail" */))
 const _224e3c18 = () => interopDefault(import('../pages/edit.vue' /* webpackChunkName: "pages/edit" */))
 const _3d268e12 = () => interopDefault(import('../pages/search.vue' /* webpackChunkName: "pages/search" */))
 const _7b299d67 = () => interopDefault(import('../pages/show.vue' /* webpackChunkName: "pages/show" */))
@@ -41,6 +42,10 @@ export const routerOptions = {
     path: "/delete",
     component: _5ea616d6,
     name: "delete"
+  }, {
+    path: "/Detail",
+    component: _bee6bf4a,
+    name: "Detail"
   }, {
     path: "/edit",
     component: _224e3c18,

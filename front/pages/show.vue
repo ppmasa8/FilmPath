@@ -55,7 +55,6 @@
           </v-col>
         </v-row>
       </v-card>
-
     </v-dialog>
   </v-row>
 </template>
