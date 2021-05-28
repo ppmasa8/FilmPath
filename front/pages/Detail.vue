@@ -21,30 +21,32 @@
               </v-img>
             </v-col>
             <v-col cols="6">
-              <v-card-title>
+              <v-card-title class="mt-2">
                 {{ result.title }}
               </v-card-title>
+              <v-card-subtitle>
+                Original title:  {{ result.original_title }}
+              </v-card-subtitle>
               <v-card-text>
                 {{ result.overview }}
               </v-card-text>
               <v-card-text>
-                {{ result.release_date }}
+                Release date:  {{ result.release_date }}
               </v-card-text>
               <v-card-text>
-                {{ result.original_title }}
-              </v-card-text>
-              <v-card-text>
-                {{ result.original_language }}
+                Original language:  {{ result.original_language }}
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn
-                  color="blue darken-1"
-                  text
-                  @click="dialog = false"
-                >
-                  Close
-                </v-btn>
+                <div class="ma-3" style="position: absolute; bottom: 10px; right: 5px;">
+                  <v-btn
+                    color="blue darken-1"
+                    text
+                    @click="dialog = false"
+                  >
+                    Close
+                  </v-btn>
+                </div>
               </v-card-actions>
             </v-col>
           </v-row>

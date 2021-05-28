@@ -17,30 +17,32 @@
           </v-col>
           <v-col cols="6">
             <div class="mb-4"></div>
-            <v-card-title>
+            <v-card-title class="mt-2">
               {{ movie.title }}
             </v-card-title>
+            <v-card-subtitle>
+              Original title:  {{ movie.original_title }}
+            </v-card-subtitle>
             <v-card-text>
               {{ movie.overview }}
             </v-card-text>
             <v-card-text>
-              {{ movie.release_date }}
+              Release date:  {{ movie.release_date }}
             </v-card-text>
             <v-card-text>
-              {{ movie.original_title }}
-            </v-card-text>
-            <v-card-text>
-              {{ movie.original_language }}
+              Original language:  {{ movie.original_language }}
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn
-                color="blue darken-1"
-                text
-                @click="returnCatalog"
-              >
-                Back
-              </v-btn>
+              <div class="ma-3" style="position: absolute; bottom: 10px; right: 5px;">
+                <v-btn
+                  color="blue darken-1"
+                  text
+                  @click="returnCatalog"
+                >
+                  Back
+                </v-btn>
+              </div>
             </v-card-actions>
           </v-col>
         </v-row>
