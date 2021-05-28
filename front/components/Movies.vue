@@ -19,11 +19,13 @@
             v-for="movie in movies"
             id="movieDiv"
           >
+            <div v-on:click="showFeature(movie.id)">
               <v-img
-                v-bind:src="'https://image.tmdb.org/t/p/original' + movie.poster_path"
-                id="imagemPosterSlide"
+                  v-bind:src="'https://image.tmdb.org/t/p/original' + movie.poster_path"
+                  id="imagemPosterSlide"
               >
               </v-img>
+            </div>
           </slide>
         </carousel>
       </div>
@@ -36,20 +38,10 @@
 import axios from 'axios'
 import { Carousel, Slide } from "vue-carousel";
 import Spinner from "../components/Spinner";
-import Detail from "../pages/Detail";
+import Detail  from "../pages/Detail";
 export default {
   props: ["Title", "fetchUrl"],
-  name: "Movies",
-  data() {
-    return {
-      movies: [],
-      results: '',
-      showLoading: true,
-      paginationButtons: false,
-      dialog: false
-    }
-  },
-
+  name : "Movies",
   components: {
     Detail,
     Carousel,
@@ -57,10 +49,20 @@ export default {
     Spinner,
   },
 
+  data() {
+    return {
+      movies           : [],
+      results          : '',
+      showLoading      : true,
+      paginationButtons: false,
+      dialog           : false
+    }
+  },
+
   async mounted() {
     this.showLoading = true;
     try {
-      const url = "https://api.themoviedb.org/3/discover/tv?api_key="
+      const url = "https://api.themoviedb.org/3/discover/movie?api_key="
       const API_KEY = "bca5abc8ed91fe4f233974561c897392"
       const response = await axios.get( url + API_KEY + this.fetchUrl );
       this.movies = response.data.results;
@@ -70,8 +72,13 @@ export default {
       this.showLoading = false;
     }
   },
-}
 
+  methods :{
+    showFeature(_id) {
+      this.$router.push({ name: "Feature", params: { id: _id } });
+    }
+  }
+}
 </script>
 
 <style>

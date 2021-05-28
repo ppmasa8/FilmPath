@@ -14,7 +14,7 @@
     ></v-text-field>
 
     <template class="text-center">
-      <v-row>
+      <v-row class="mt-4">
         <v-col
           v-for='result in results'
           :key='result.id'
@@ -47,9 +47,9 @@ export default {
         value => !!value || 'Required.',
         value => (value && value.length >= 3) || 'Min 3 characters',
       ],
-      query: '',
+      query  : '',
       results: '',
-      dialog: '',
+      dialog : '',
     }
   },
 
@@ -60,7 +60,6 @@ export default {
       axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`).then(res => {
         this.results = res.data.results
       });
-      console.log(this.results)
     },
 
     validate () {

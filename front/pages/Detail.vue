@@ -28,13 +28,13 @@
                 {{ result.overview }}
               </v-card-text>
               <v-card-text>
-                {{ result.release_date}}
+                {{ result.release_date }}
               </v-card-text>
               <v-card-text>
-                {{ result.original_title}}
+                {{ result.original_title }}
               </v-card-text>
               <v-card-text>
-                {{ result.original_language}}
+                {{ result.original_language }}
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>

@@ -67,7 +67,7 @@ export default {
   data: () => {
     return {
       results: '',
-      dialog: false,
+      dialog : false,
     }
   },
 
@@ -76,7 +76,6 @@ export default {
     axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${this.Title}`).then(res => {
       this.results = res.data.results[0]
     });
-    console.log(this.results)
   },
 }
 </script>

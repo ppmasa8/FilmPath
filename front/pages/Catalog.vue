@@ -12,7 +12,7 @@
 <script>
 import Movies from "../components/Movies";
 export default {
-  name: "catalog",
+  name: "Catalog",
   components: {
     Movies
   },

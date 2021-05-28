@@ -21,7 +21,6 @@
                 lg="4"
               >
                 <v-card>
-
                   <Images v-bind:Title="movie.title"></Images>
 
                   <v-card-title class="subheading font-weight-bold">
@@ -77,19 +76,19 @@
                       <v-spacer></v-spacer>
 
                       <div>
-                        <show v-bind:Title="movie.title"></show>
+                        <Show v-bind:Title="movie.title"></Show>
                       </div>
 
                       <div class="mx-3"></div>
 
                       <div>
-                        <edit v-bind:ids="movie.id"></edit>
+                        <Edit v-bind:ids="movie.id"></Edit>
                       </div>
 
                       <div class="mx-3"></div>
 
                       <div>
-                        <delete v-bind:params="movie"></delete>
+                        <Delete v-bind:params="movie"></Delete>
                       </div>
 
                       <div class="mx-2"></div>
@@ -108,9 +107,9 @@
 
 <script>
 import Create from "./Create";
-import Edit from "./edit";
-import Delete from "./delete";
-import Show from "./show";
+import Edit from "./Edit";
+import Delete from "./Delete";
+import Show from "./Show";
 import Images from "../components/Images";
 import axios from "axios";
 export default {
