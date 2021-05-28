@@ -33,7 +33,6 @@
   </div>
 </template>
 
-
 <script>
 import axios from 'axios'
 import { Carousel, Slide } from "vue-carousel";
@@ -49,7 +48,7 @@ export default {
     Spinner,
   },
 
-  data() {
+  data: () => {
     return {
       movies           : [],
       results          : '',

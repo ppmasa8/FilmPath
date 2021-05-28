@@ -14,7 +14,7 @@ import axios from "axios";
 
 export default {
   props: ['Title'],
-  data:function () {
+  data: () => {
     return {
       results: [],
     }

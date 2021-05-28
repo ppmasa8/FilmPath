@@ -15,7 +15,6 @@
           <v-col cols="6">
             <div class="mb-4"></div>
             <v-card-title>
-
               {{ movie.title }}
             </v-card-title>
             <v-card-text>
@@ -56,9 +55,9 @@ export default {
     Spinner,
   },
 
-  data: function () {
+  data: () => {
     return {
-      movie: [],
+      movie      : [],
       showLoading: true,
     }
   },

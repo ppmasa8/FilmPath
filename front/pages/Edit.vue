@@ -86,7 +86,6 @@
   </v-row>
 </template>
 
-
 <script>
 export default {
   props :['ids'],

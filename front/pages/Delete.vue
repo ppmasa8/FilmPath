@@ -30,7 +30,7 @@
 export default {
   props: ['params'],
 
-  data: function() {
+  data: () => {
     return {
       snackbar: false,
       deleteText: "",

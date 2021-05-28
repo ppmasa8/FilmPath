@@ -104,7 +104,6 @@
   </v-app>
 </template>
 
-
 <script>
 import Create from "./Create";
 import Edit from "./Edit";
@@ -115,7 +114,7 @@ import axios from "axios";
 export default {
   components: {Delete, Edit, Create, Show, Images},
 
-  data: function() {
+  data: () => {
     return {
       movies: [],
       headers: [

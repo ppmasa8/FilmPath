@@ -60,7 +60,7 @@ import axios from "axios";
 export default {
   name: 'Detail',
   props: ['ids'],
-  data:function () {
+  data: () => {
     return {
       result: [],
       dialog: false
