@@ -9,6 +9,7 @@
         <v-data-iterator
           :items="movies"
           :itemsPerPage="6"
+          hide-default-footer
         >
           <template class="text-center">
             <v-row>
