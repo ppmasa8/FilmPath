@@ -1,6 +1,9 @@
 <template>
   <div>
     <v-row justify="center">
+      <div v-show="showLoading" id="loadingMovie">
+        <Spinner />
+      </div>
       <v-card>
         <v-spacer></v-spacer>
         <v-row>
