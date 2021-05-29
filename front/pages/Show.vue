@@ -1,4 +1,4 @@
-<template>
+<template v-if="getShow">
   <v-row justify="center">
     <v-dialog
       v-model="dialog"
@@ -68,16 +68,23 @@ export default {
   props: ['Title'],
   data: () => {
     return {
-      results: '',
-      dialog : false,
+      results    : '',
+      dialog     : false,
+      movieExists: true
     }
   },
 
-  mounted() {
-    const API_KEY = 'bca5abc8ed91fe4f233974561c897392'
-    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${this.Title}`).then(res => {
-      this.results = res.data.results[0]
-    });
+  methods: {
+    getShow() {
+      const API_KEY = 'bca5abc8ed91fe4f233974561c897392'
+      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${this.Title}`).then(res => {
+        this.results = res.data.results[0]
+        if (this.results !== null) {
+          this.movieExists = false
+        }
+        return this.movieExists
+      });
+    }
   },
 }
 </script>

@@ -24,6 +24,7 @@
                 <v-card>
                   <Images v-bind:Title="movie.title"></Images>
 
+
                   <v-card-title class="subheading font-weight-bold">
                     {{ movie.title }}
                   </v-card-title>
