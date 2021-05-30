@@ -2,7 +2,15 @@
   <div
     v-on:click="dialog = true"
   >
-    <v-img v-bind:src="'http://image.tmdb.org/t/p/w300/' + result.poster_path">
+    <v-img
+      v-bind:src="'http://image.tmdb.org/t/p/w300/' + result.poster_path"
+      v-if="imageExists"
+    >
+    </v-img>
+    <v-img
+      v-else
+      src="https://1.bp.blogspot.com/-7DsADfq2BX4/Xlyf7aSybcI/AAAAAAABXq8/ut72jfLtCuo8ZvRGp1kqCYEbeQ0dOR8pgCNcBGAsYHQ/s1600/no_image_tate.jpg"
+    >
     </v-img>
     <v-row justify="center">
       <v-dialog
@@ -64,8 +72,9 @@ export default {
   props: ['ids'],
   data: () => {
     return {
-      result: [],
-      dialog: false
+      result     : [],
+      dialog     : false,
+      imageExists: false
     }
   },
 
@@ -73,6 +82,9 @@ export default {
     const API_KEY = 'bca5abc8ed91fe4f233974561c897392'
     axios.get(`https://api.themoviedb.org/3/movie/${this.ids}?api_key=${API_KEY}&language=en-US`).then(res => {
       this.result = res.data
+      if (this.result.poster_path !== null) {
+        this.imageExists = true
+      }
     });
   }
 }
