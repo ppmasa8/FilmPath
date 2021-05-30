@@ -1,14 +1,31 @@
 <template>
   <v-app>
-    <h1 v-if="error.statusCode === 404">
-      {{ pageNotFound }}
-    </h1>
-    <h1 v-else>
-      {{ otherError }}
-    </h1>
-    <NuxtLink to="/top">
-      Home page
-    </NuxtLink>
+    <v-card
+      class="mx-auto mt-6"
+      max-width="800px"
+      elevation="0"
+    >
+      <v-img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSeqQMsYCEy7tfYhHQCmsffxDZiUahMb75Rw&usqp=CAU"
+      >
+      </v-img>
+      <v-row>
+        <v-col cols="2"></v-col>
+        <v-col cols="8">
+          <h1 v-if="error.statusCode === 404">
+            {{ pageNotFound }}
+          </h1>
+          <h1 v-else>
+            {{ otherError }}
+          </h1>
+          <NuxtLink to="/top">
+            Home page
+          </NuxtLink>
+        </v-col>
+        <v-col cols="2"></v-col>
+      </v-row>
+    </v-card>
+
   </v-app>
 </template>
 

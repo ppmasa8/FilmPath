@@ -21,7 +21,7 @@
                 md="4"
                 lg="4"
               >
-                <v-card>
+                <v-card outlined>
                   <Images v-bind:Title="movie.title"></Images>
 
                   <v-card-title class="subheading font-weight-bold">
