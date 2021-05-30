@@ -110,7 +110,7 @@ export default Vue.extend({
         },
         {
           icon : 'mdi-apps',
-          title: 'Registration Movie',
+          title: 'My List',
           to   : '/'
         },
         {

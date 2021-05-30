@@ -12,7 +12,7 @@
     ></v-text-field>
 
     <template class="text-center">
-      <v-row class="mt-4">
+      <v-row class="mt-4 mb-8">
         <v-col
           v-for='result in results'
           :key='result.id'
