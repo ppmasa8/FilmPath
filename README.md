@@ -2,7 +2,7 @@
 Dialy for movie.
 
 ![image](https://user-images.githubusercontent.com/75968942/120345980-ee157a00-c335-11eb-89f4-b2ef81639c32.png)
-### Add Useing lists
+### Add Using lists
 #### Front
 - Nuxt.js
 - Vue.js
