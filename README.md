@@ -1,14 +1,29 @@
 # FilmPath
 Dialy for movie.
 
-![Untitled Diagram (3)](https://user-images.githubusercontent.com/75968942/117676959-fec84980-b1e8-11eb-95ff-6c12db0c0e18.png)
-
-### Add skill lists.
-- The Movie database
+![image](https://user-images.githubusercontent.com/75968942/120345980-ee157a00-c335-11eb-89f4-b2ef81639c32.png)
+### Add Useing lists
+#### Front
 - Nuxt.js
-- Deploy tools
+- Vue.js
+- Vuetify
+- axios
+#### API
+- Ruby
+- Ruby on Rails
+- The Movie Database
+#### Test
+- Jest
+- Rspec
+#### Database
+- PostgreSQL
+#### Deploy
+- Heroku
 
-### Functions.
-- CRUD actions.
+### Functions
+- CRUD actions for "My Lists".
 - RESTful at Rails api.
-- Asynchronous processing.
+- Asynchronous processing for movie data.
+- You can get rankings for various types of movies.
+- Switch light theme or dark theme.
+- Search for movie title.
