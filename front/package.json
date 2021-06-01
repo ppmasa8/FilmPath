@@ -19,6 +19,11 @@
     "@nuxt/types": "^2.15.3",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/vuetify": "^1.11.3",
-    "vue-carousel": "^0.18.0"
+    "@vue/test-utils": "^1.2.0",
+    "babel-jest": "^27.0.2",
+    "babel-preset-vue-app": "^2.0.0",
+    "jest": "^27.0.3",
+    "vue-carousel": "^0.18.0",
+    "vue-jest": "^3.0.7"
   }
 }
